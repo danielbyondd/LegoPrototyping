@@ -42,8 +42,8 @@ final class StoreTests: XCTestCase {
 
         // Register the action provider (this would happen from the store carousel UI code)
         var providerCalled = false
-        let actionFactory = LegoActionFactory()
-        actionFactory.registerDataProvider(for: ItemModalAction.self) { content in
+        let actionExecutor = LegoActionExecutor()
+        actionExecutor.registerDataProvider(for: ItemModalAction.self) { content in
             providerCalled = true
             // Here we return an empty struct, but since it's an associated type, we can pass
             // anything we want from the UI to the action
@@ -53,7 +53,7 @@ final class StoreTests: XCTestCase {
         // Execute the action. The factory will call the data provider, which will fetch the UI
         // data and pass it to the action implementation, so it can have full context. The UI
         // layer does not need to explicitly know which action it's triggering at this line.
-        try await actionFactory.executeAction(action)
+        try await actionExecutor.execute(action)
 
         // Assert our data provider was called, meaning our pipeline is working
         XCTAssertTrue(providerCalled)
