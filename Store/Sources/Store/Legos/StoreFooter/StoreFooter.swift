@@ -2,19 +2,13 @@
 //  StoreFooter.swift
 //  
 //
-//  Created by Daniel Byon on 11/1/22.
+//  Created by Daniel Byon on 11/18/22.
 //
 
 import Foundation
 import Lego
 
 public struct StoreFooter: LegoContent {
-
-    public var empty: String? = nil
-
-    public enum CodingKeys: String, CodingKey {
-        case empty
-    }
 
 }
 

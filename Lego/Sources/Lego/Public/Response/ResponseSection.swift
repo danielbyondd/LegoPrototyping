@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct ResponseSection: Decodable {
+public struct ResponseSection: Decodable {
 
-    let id: String
-    let content: [String]
+    public let id: String
+    public let content: [String]
 
     private enum CodingKeys: String, CodingKey {
         case id = "section_id"

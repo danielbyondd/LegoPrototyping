@@ -2,7 +2,7 @@
 //  StoreMenuCategory.swift
 //  
 //
-//  Created by Daniel Byon on 11/1/22.
+//  Created by Daniel Byon on 11/18/22.
 //
 
 import Foundation
@@ -10,13 +10,8 @@ import Lego
 
 public struct StoreMenuCategory: LegoContent {
 
-    public let headerID: String
-    public let children: [String]
-
-    public enum CodingKeys: String, CodingKey {
-        case headerID = "header_id"
-        case children
-    }
+    public let header: Lego
+    public let children: [Lego]
 
 }
 

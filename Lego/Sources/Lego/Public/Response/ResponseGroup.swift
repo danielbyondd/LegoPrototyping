@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct ResponseGroup: Decodable {
+public struct ResponseGroup: Decodable {
 
-    let name: String
-    let sections: [ResponseSection]
-    let logging: LegoLoggingInfo
+    public let name: String
+    public let sections: [ResponseSection]
+    public let logging: LegoLoggingInfo
 
     private enum CodingKeys: String, CodingKey {
         case name = "group_name"

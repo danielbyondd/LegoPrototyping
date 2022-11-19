@@ -9,6 +9,6 @@ import Foundation
 
 public struct Image: Codable {
 
-    public let url: URL
+    public let url: URL?
 
 }

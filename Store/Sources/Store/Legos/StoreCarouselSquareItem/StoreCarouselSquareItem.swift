@@ -2,7 +2,7 @@
 //  StoreCarouselSquareItem.swift
 //  
 //
-//  Created by Daniel Byon on 11/1/22.
+//  Created by Daniel Byon on 11/18/22.
 //
 
 import Foundation
@@ -17,27 +17,16 @@ public struct StoreCarouselSquareItem: LegoContent {
     public let image: Image
     public let quickAddContext: QuickAddContext
     public let ratingDisplayString: String
-    @CodableLegoActions public var actions: [any LegoAction]
+    public let storeID: String
+    public let actions: [any LegoAction]
     public let logging: LegoLoggingInfo
 
-    public struct QuickAddContext: Codable {
+    public struct QuickAddContext {
         public let isEligible: Bool
 
-        private enum CodingKeys: String, CodingKey {
-            case isEligible = "is_eligible"
+        init(quickAddContext: ResponseContent.QuickAddContext) {
+            isEligible = quickAddContext.isEligible
         }
-    }
-
-    public enum CodingKeys: String, CodingKey {
-        case id
-        case name
-        case description
-        case displayPrice = "display_price"
-        case image
-        case quickAddContext = "quick_add_context"
-        case ratingDisplayString = "rating_display_string"
-        case actions
-        case logging
     }
 
 }
@@ -45,5 +34,7 @@ public struct StoreCarouselSquareItem: LegoContent {
 extension LegoContentIdentifier {
 
     public static let storeCarouselSquareItem = LegoContentIdentifier(name: "cx.ox.store.carousel_square_item")
+
+    public static let storeMenuCategoryItem = LegoContentIdentifier(name: "cx.ox.store.menu_category_item")
 
 }

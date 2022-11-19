@@ -38,3 +38,12 @@ public struct LegoLoggingInfo: Codable {
     }
 
 }
+
+extension LegoLoggingInfo {
+
+    public func combine(with other: LegoLoggingInfo?) -> LegoLoggingInfo {
+        let otherPassDownAttributes = other?.attributes.filter { $0.shouldPassDown } ?? []
+        return LegoLoggingInfo(attributes: self.attributes + otherPassDownAttributes)
+    }
+
+}

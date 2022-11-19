@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct ResponseLego: Decodable {
+public struct ResponseLego: Decodable {
 
-    let id: String
-    let type: String
-    let content: any LegoContent
-    let logging: LegoLoggingInfo?
+    public let id: String
+    public let type: String
+    public let content: any LegoResponseContent
+    public let logging: LegoLoggingInfo?
 
     private enum CodingKeys: String, CodingKey {
         case id = "lego_id"
@@ -25,14 +25,14 @@ struct ResponseLego: Decodable {
         case type = "lego_type"
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(String.self, forKey: .id)
         let type = try container.decode(String.self, forKey: .type)
         self.type = type
 
         let identifier = LegoContentIdentifier(name: type)
-        let legoType = try LegoContentRegistry.shared.contentType(forIdentifier: identifier)
+        let legoType = try LegoContentRegistry.shared.responseContentType(forIdentifier: identifier)
         let lego = try container.decode(legoType, forKey: .content)
         self.content = lego
 
