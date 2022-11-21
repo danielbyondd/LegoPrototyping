@@ -19,7 +19,6 @@ public struct StoreCarouselSquareItem: LegoContent {
     public let ratingDisplayString: String
     public let storeID: String
     public let actions: [any LegoAction]
-    public let logging: LegoLoggingInfo
 
     public struct QuickAddContext {
         public let isEligible: Bool

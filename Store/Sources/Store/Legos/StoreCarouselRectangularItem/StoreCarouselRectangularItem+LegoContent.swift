@@ -22,7 +22,6 @@ extension StoreCarouselRectangularItem {
         public let quickAddContext: QuickAddContext
         public let storeID: String
         @CodableLegoActions public var actions: [any LegoAction]
-        public let logging: LegoLoggingInfo
 
         public struct Cursor: Codable {
             public let cursor: String
@@ -77,7 +76,6 @@ extension StoreCarouselRectangularItem {
             case quickAddContext = "quick_add_context"
             case storeID = "store_id"
             case actions
-            case logging
         }
 
     }
@@ -101,7 +99,6 @@ extension StoreCarouselRectangularItem {
         quickAddContext = .init(quickAddContext: responseContent.quickAddContext)
         storeID = responseContent.storeID
         actions = responseContent.actions
-        logging = responseContent.logging
     }
 
 }

@@ -21,7 +21,6 @@ extension StoreCarouselSquareItem {
         public let ratingDisplayString: String
         public let storeID: String
         @CodableLegoActions public var actions: [any LegoAction]
-        public let logging: LegoLoggingInfo
 
         public struct QuickAddContext: Codable {
             public let isEligible: Bool
@@ -41,7 +40,6 @@ extension StoreCarouselSquareItem {
             case ratingDisplayString = "rating_display_string"
             case storeID = "store_id"
             case actions
-            case logging
         }
 
     }
@@ -60,7 +58,6 @@ extension StoreCarouselSquareItem {
         self.ratingDisplayString = responseContent.ratingDisplayString
         self.storeID = responseContent.storeID
         self.actions = responseContent.actions
-        self.logging = responseContent.logging
     }
 
 }

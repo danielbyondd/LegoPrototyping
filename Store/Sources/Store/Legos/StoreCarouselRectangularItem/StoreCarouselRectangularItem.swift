@@ -20,7 +20,6 @@ public struct StoreCarouselRectangularItem: LegoContent {
     public let quickAddContext: QuickAddContext
     public let storeID: String
     public let actions: [any LegoAction]
-    public let logging: LegoLoggingInfo
 
     public struct Cursor {
         public let cursor: String
