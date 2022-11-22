@@ -15,6 +15,9 @@
 		4766636D2911CF9500B25CA1 /* LegoPrototypingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4766636C2911CF9500B25CA1 /* LegoPrototypingUITests.swift */; };
 		4766636F2911CF9500B25CA1 /* LegoPrototypingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4766636E2911CF9500B25CA1 /* LegoPrototypingUITestsLaunchTests.swift */; };
 		4766637F2911D01A00B25CA1 /* Lego in Frameworks */ = {isa = PBXBuildFile; productRef = 4766637E2911D01A00B25CA1 /* Lego */; };
+		47666387292C519600B25CA1 /* LegoConsumer in Frameworks */ = {isa = PBXBuildFile; productRef = 47666386292C519600B25CA1 /* LegoConsumer */; };
+		47666389292C519600B25CA1 /* LegoPrism in Frameworks */ = {isa = PBXBuildFile; productRef = 47666388292C519600B25CA1 /* LegoPrism */; };
+		4766638B292C519600B25CA1 /* Store in Frameworks */ = {isa = PBXBuildFile; productRef = 4766638A292C519600B25CA1 /* Store */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,8 @@
 		4766637B2911CFFC00B25CA1 /* Lego */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Lego; sourceTree = "<group>"; };
 		4766637C2911D00E00B25CA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		476663812911E65500B25CA1 /* Store */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Store; sourceTree = "<group>"; };
+		47666384292C50B900B25CA1 /* LegoConsumer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LegoConsumer; sourceTree = "<group>"; };
+		47666385292C511800B25CA1 /* LegoPrism */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LegoPrism; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +60,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47666389292C519600B25CA1 /* LegoPrism in Frameworks */,
 				4766637F2911D01A00B25CA1 /* Lego in Frameworks */,
+				4766638B292C519600B25CA1 /* Store in Frameworks */,
+				47666387292C519600B25CA1 /* LegoConsumer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				476663812911E65500B25CA1 /* Store */,
+				47666384292C50B900B25CA1 /* LegoConsumer */,
+				47666385292C511800B25CA1 /* LegoPrism */,
 				4766637B2911CFFC00B25CA1 /* Lego */,
 				476663502911CF9400B25CA1 /* LegoPrototyping */,
 				476663612911CF9500B25CA1 /* LegoPrototypingTests */,
@@ -169,6 +179,9 @@
 			name = LegoPrototyping;
 			packageProductDependencies = (
 				4766637E2911D01A00B25CA1 /* Lego */,
+				47666386292C519600B25CA1 /* LegoConsumer */,
+				47666388292C519600B25CA1 /* LegoPrism */,
+				4766638A292C519600B25CA1 /* Store */,
 			);
 			productName = LegoPrototyping;
 			productReference = 4766634E2911CF9400B25CA1 /* LegoPrototyping.app */;
@@ -617,6 +630,18 @@
 		4766637E2911D01A00B25CA1 /* Lego */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Lego;
+		};
+		47666386292C519600B25CA1 /* LegoConsumer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LegoConsumer;
+		};
+		47666388292C519600B25CA1 /* LegoPrism */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LegoPrism;
+		};
+		4766638A292C519600B25CA1 /* Store */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Store;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

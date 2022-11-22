@@ -7,6 +7,7 @@
 
 import Foundation
 import Lego
+import LegoConsumer
 
 public struct StoreCarouselRectangularItem: LegoContent {
 

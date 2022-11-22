@@ -7,6 +7,7 @@
 
 import Foundation
 import Lego
+import LegoConsumer
 
 extension StoreCarouselRectangularItem {
 

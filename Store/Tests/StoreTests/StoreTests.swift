@@ -1,5 +1,7 @@
 import XCTest
 @testable import Lego
+@testable import LegoConsumer
+@testable import LegoPrism
 @testable import Store
 
 final class StoreTests: XCTestCase {
