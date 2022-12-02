@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol LegoResponseContent<CodingKeys>: Codable {
+public protocol LegoResponseContent<CodingKeys>: Codable, Hashable {
 
     associatedtype CodingKeys: CodingKey
 

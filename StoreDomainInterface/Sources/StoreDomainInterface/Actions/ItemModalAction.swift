@@ -10,7 +10,7 @@ import Lego
 
 public struct ItemModalAction: LegoAction {
 
-    public struct Content: LegoActionContent {
+    public struct Content: LegoActionContent, Hashable {
 
         public let itemID: String
         public let uri: URL

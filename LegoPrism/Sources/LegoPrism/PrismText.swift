@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct PrismText: Codable {
+public struct PrismText: Codable, Hashable {
 
     public let text: String
     public let style: String

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Section: Identifiable {
+public struct Section: Identifiable, Hashable {
 
     public let id: String
     public let content: [Lego]

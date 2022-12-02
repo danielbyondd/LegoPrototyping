@@ -7,11 +7,11 @@
 
 import Foundation
 
-public struct LegoLoggingInfo: Codable {
+public struct LegoLoggingInfo: Codable, Hashable {
 
     public let attributes: [Attribute]
 
-    public struct Attribute: Codable {
+    public struct Attribute: Codable, Hashable {
         public let key: String
         public let value: String
         public let shouldPassDown: Bool

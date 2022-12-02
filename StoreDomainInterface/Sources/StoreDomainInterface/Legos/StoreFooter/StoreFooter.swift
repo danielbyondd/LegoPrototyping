@@ -17,3 +17,25 @@ extension LegoIdentifier {
     public static let storeFooter = LegoIdentifier(name: "cx.ox.store.footer")
 
 }
+
+extension StoreFooter {
+
+    public struct ResponseContent: LegoResponseContent {
+
+        public var empty: String? = nil
+
+        public enum CodingKeys: String, CodingKey {
+            case empty
+        }
+
+    }
+
+    public init(
+        responseContent: ResponseContent,
+        legoFactory: LegoFactory,
+        parentLoggingInfo: LegoLoggingInfo?
+    ) throws {
+
+    }
+
+}

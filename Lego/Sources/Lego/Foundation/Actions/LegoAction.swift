@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol LegoAction<Content, UserInterfaceData>: Codable {
+public protocol LegoAction<Content, UserInterfaceData>: Codable, AnyEquatable, Hashable {
 
     associatedtype Content: LegoActionContent
     associatedtype UserInterfaceData
@@ -38,5 +38,23 @@ extension LegoAction where UserInterfaceData == Void {
 public protocol LegoActionContent<CodingKeys>: Codable {
 
     associatedtype CodingKeys: CodingKey
+
+}
+
+public func == (lhs: [any LegoAction], rhs: [any LegoAction]) -> Bool {
+    guard lhs.count == rhs.count else {
+        return false
+    }
+    return zip(lhs, rhs)
+        .allSatisfy { l, r in
+            l.isEqual(to: r)
+        }
+}
+
+extension Array<any LegoAction> {
+
+    public var hashValue: Int {
+        map(\.hashValue).hashValue
+    }
 
 }

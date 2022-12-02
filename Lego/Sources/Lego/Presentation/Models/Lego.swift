@@ -53,3 +53,25 @@ public struct Lego: Identifiable {
     }
 
 }
+
+extension Lego: Equatable {
+
+    public static func == (lhs: Lego, rhs: Lego) -> Bool {
+        return lhs.id == rhs.id
+        && lhs.type == rhs.type
+        && lhs.content.isEqual(to: rhs.content)
+        && lhs.logging == rhs.logging
+    }
+
+}
+
+extension Lego: Hashable {
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(type)
+        hasher.combine(content)
+        hasher.combine(logging)
+    }
+
+}

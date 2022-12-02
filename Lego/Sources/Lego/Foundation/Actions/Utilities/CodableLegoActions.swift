@@ -85,6 +85,22 @@ public struct CodableLegoActions: Codable {
 
 }
 
+extension CodableLegoActions: Equatable {
+
+    public static func == (lhs: CodableLegoActions, rhs: CodableLegoActions) -> Bool {
+        return lhs.wrappedValue == rhs.wrappedValue
+    }
+
+}
+
+extension CodableLegoActions: Hashable {
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(wrappedValue.hashValue)
+    }
+
+}
+
 extension KeyedDecodingContainer {
 
     func decodeActionData<T>(_: T.Type, forKey key: Key) throws -> T.Content where T: LegoAction {

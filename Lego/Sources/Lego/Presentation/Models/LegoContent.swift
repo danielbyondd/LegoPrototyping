@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol LegoContent<ResponseContent> {
+public protocol LegoContent<ResponseContent>: AnyEquatable, Hashable {
 
     associatedtype ResponseContent: LegoResponseContent
 

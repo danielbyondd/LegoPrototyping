@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Group {
+public struct Group: Hashable {
 
     public let name: String
     public let sections: [Section]

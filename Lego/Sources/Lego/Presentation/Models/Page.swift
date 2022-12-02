@@ -7,9 +7,9 @@
 
 import Foundation
 
-public struct Page {
+public struct Page: Hashable {
 
-    public struct Lego {
+    public struct Lego: Hashable {
         public let groups: [Group]
         public let logging: LegoLoggingInfo
 
