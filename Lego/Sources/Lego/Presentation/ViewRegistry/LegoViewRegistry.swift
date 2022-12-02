@@ -26,20 +26,6 @@ public final class LegoViewRegistry {
         registeredContentViewTypes[identifier] = contentViewType
     }
 
-//    func contentType(forIdentifier identifier: LegoIdentifier) throws -> any LegoContent.Type {
-//        guard let type = registeredContentTypes[identifier] else {
-//            throw LegoViewRegistryError.unregisteredContentIdentifier(identifier)
-//        }
-//        return type
-//    }
-//
-//    func contentViewType(forIdentifier identifier: LegoIdentifier) throws -> any View.Type {
-//        guard let type = registeredContentViewTypes[identifier] else {
-//            throw LegoViewRegistryError.unregisteredContentIdentifier(identifier)
-//        }
-//        return type
-//    }
-
     func makeLegoContentView(for lego: Lego) -> any View {
         let identifier = lego.typeIdentifier
         guard let factory = registeredLegos[identifier] else {

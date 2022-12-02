@@ -20,11 +20,3 @@ extension LegoIdentifier {
     public static let storeCarousel = LegoIdentifier(name: "cx.ox.store.carousel")
 
 }
-
-extension StoreCarousel: LegoViewFactoryDescriptionConvertible {
-
-    public func toViewFactoryDescription() -> LegoViewFactoryDescription {
-        StoreViewFactoryDescription.carousel(self)
-    }
-
-}

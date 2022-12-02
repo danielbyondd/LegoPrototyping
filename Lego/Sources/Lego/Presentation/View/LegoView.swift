@@ -25,39 +25,6 @@ public struct LegoView: View {
 
 }
 
-//public protocol LegoView<Content>: View {
-//
-//    associatedtype Content: View
-//
-//    @ViewBuilder
-//    var viewFactory: (LegoViewFactoryDescription) -> Content { get }
-//
-//}
-
-//public struct LegoView<Content: View>: View {
-//
-//    private let description: LegoViewFactoryDescription
-//    @ViewBuilder
-//    private let factory: (LegoViewFactoryDescription) -> Content
-//
-//    public var body: some View {
-//        factory(description)
-//    }
-//
-//    init(
-//        description: LegoViewFactoryDescription,
-//        @ViewBuilder factory: @escaping (LegoViewFactoryDescription) -> Content
-//    ) {
-//        self.description = description
-//        self.factory = factory
-//    }
-//
-//}
-
-
-
-
-
 public protocol LegoContentView<Content>: View {
 
     associatedtype Content: LegoContent
