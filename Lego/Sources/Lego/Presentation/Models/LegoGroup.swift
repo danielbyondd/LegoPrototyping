@@ -15,7 +15,7 @@ public struct Group: Hashable {
 
     init(
         responseGroup: ResponseGroup,
-        legoFactory: LegoFactory,
+        legoFactory: LegoBlockFactory,
         parentLoggingInfo: LegoLoggingInfo?
     ) throws {
         name = responseGroup.name

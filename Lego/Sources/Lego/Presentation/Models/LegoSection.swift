@@ -10,11 +10,11 @@ import Foundation
 public struct Section: Identifiable, Hashable {
 
     public let id: String
-    public let content: [Lego]
+    public let content: [LegoBlock]
 
     init(
         responseSection: ResponseSection,
-        legoFactory: LegoFactory,
+        legoFactory: LegoBlockFactory,
         parentLoggingInfo: LegoLoggingInfo?
     ) throws {
         id = responseSection.id

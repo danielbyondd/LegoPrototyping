@@ -1,5 +1,5 @@
 //
-//  Lego.swift
+//  LegoBlock.swift
 //  
 //
 //  Created by Daniel Byon on 11/17/22.
@@ -7,26 +7,26 @@
 
 import Foundation
 
-public struct Lego: Identifiable {
+public struct LegoBlock: Identifiable {
 
     public let id: String
     public let type: String
-    public let content: any LegoContent
+    public let content: any LegoBlockContent
     public let logging: LegoLoggingInfo?
 
-    public var typeIdentifier: LegoIdentifier { .init(name: type) }
+    public var typeIdentifier: LegoBlockIdentifier { .init(name: type) }
 
     public init(
-        responseLego: ResponseLego,
-        legoFactory: LegoFactory,
+        responseLego: ResponseLegoBlock,
+        legoFactory: LegoBlockFactory,
         parentLoggingInfo: LegoLoggingInfo?
     ) throws {
         self.id = responseLego.id
         self.type = responseLego.type
 
-        let identifier = LegoIdentifier(name: responseLego.type)
-        let legoContentType = try LegoContentRegistry.shared.contentType(forIdentifier: identifier)
-        let legoResponseType = try LegoContentRegistry.shared.responseContentType(forIdentifier: identifier)
+        let identifier = LegoBlockIdentifier(name: responseLego.type)
+        let legoContentType = try LegoBlockContentRegistry.shared.contentType(forIdentifier: identifier)
+        let legoResponseType = try LegoBlockContentRegistry.shared.responseContentType(forIdentifier: identifier)
         let responseContent = try Self.unwrap(legoResponseType, object: responseLego.content)
 
         let logging = responseLego.logging?.combine(with: parentLoggingInfo)
@@ -45,7 +45,7 @@ public struct Lego: Identifiable {
     }
 
     /// Similar to the `unwrap` function, we need a way to use the content type to cast the response content as well as call the init
-    private static func makeContent<Content>(_: Content.Type, responseContent: any LegoResponseContent, legoFactory: LegoFactory, parentLoggingInfo: LegoLoggingInfo?) throws -> Content where Content: LegoContent {
+    private static func makeContent<Content>(_: Content.Type, responseContent: any LegoResponseContent, legoFactory: LegoBlockFactory, parentLoggingInfo: LegoLoggingInfo?) throws -> Content where Content: LegoBlockContent {
         guard let responseContent = responseContent as? Content.ResponseContent else {
             throw LegoError.legoContentTypeMismatch(expected: Content.ResponseContent.self, actual: Swift.type(of: responseContent))
         }
@@ -54,9 +54,9 @@ public struct Lego: Identifiable {
 
 }
 
-extension Lego: Equatable {
+extension LegoBlock: Equatable {
 
-    public static func == (lhs: Lego, rhs: Lego) -> Bool {
+    public static func == (lhs: LegoBlock, rhs: LegoBlock) -> Bool {
         return lhs.id == rhs.id
         && lhs.type == rhs.type
         && lhs.content.isEqual(to: rhs.content)
@@ -65,7 +65,7 @@ extension Lego: Equatable {
 
 }
 
-extension Lego: Hashable {
+extension LegoBlock: Hashable {
 
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)

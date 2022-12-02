@@ -8,16 +8,16 @@
 import Foundation
 import Lego
 
-public struct StoreCarousel: LegoContent {
+public struct StoreCarousel: LegoBlockContent {
 
-    public let header: Lego
-    public let children: [Lego]
+    public let header: LegoBlock
+    public let children: [LegoBlock]
 
 }
 
-extension LegoIdentifier {
+extension LegoBlockIdentifier {
 
-    public static let storeCarousel = LegoIdentifier(name: "cx.ox.store.carousel")
+    public static let storeCarousel = LegoBlockIdentifier(name: "cx.ox.store.carousel")
 
 }
 
@@ -37,7 +37,7 @@ extension StoreCarousel {
 
     public init(
         responseContent: ResponseContent,
-        legoFactory: LegoFactory,
+        legoFactory: LegoBlockFactory,
         parentLoggingInfo: LegoLoggingInfo?
     ) throws {
         header = try legoFactory.makeLego(forID: responseContent.headerID, parentLoggingInfo: parentLoggingInfo)

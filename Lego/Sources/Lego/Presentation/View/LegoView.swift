@@ -9,7 +9,7 @@ import SwiftUI
 
 public struct LegoView: View {
 
-    public let lego: Lego
+    public let lego: LegoBlock
 
     // TODO: Resolve this as a service
     private let registry: LegoViewRegistry = .shared
@@ -19,7 +19,7 @@ public struct LegoView: View {
         AnyView(registry.makeLegoContentView(for: lego))
     }
 
-    public init(lego: Lego) {
+    public init(lego: LegoBlock) {
         self.lego = lego
     }
 
@@ -27,7 +27,7 @@ public struct LegoView: View {
 
 public protocol LegoContentView<Content>: View {
 
-    associatedtype Content: LegoContent
+    associatedtype Content: LegoBlockContent
 
     init(content: Content)
 
@@ -35,7 +35,7 @@ public protocol LegoContentView<Content>: View {
 
 extension LegoContentView {
 
-    public init(anyContent: any LegoContent) throws {
+    public init(anyContent: any LegoBlockContent) throws {
         guard let content = anyContent as? Content else {
             throw LegoContentViewError.contentTypeMismatch(expected: Content.self, actual: Swift.type(of: anyContent))
         }

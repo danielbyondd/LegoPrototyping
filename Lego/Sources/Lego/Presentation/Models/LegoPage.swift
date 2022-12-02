@@ -14,7 +14,7 @@ public struct Page: Hashable {
         public let logging: LegoLoggingInfo
 
         init(lego: ResponsePage.Lego) throws {
-            let legoFactory = LegoFactory(responseLegos: lego.data)
+            let legoFactory = LegoBlockFactory(responseLegos: lego.data)
             groups = try lego.groups.map { try .init(responseGroup: $0, legoFactory: legoFactory, parentLoggingInfo: lego.logging) }
             logging = lego.logging
         }

@@ -9,18 +9,18 @@ final class StoreTests: XCTestCase {
 
     override func setUp() async throws {
         // This setup code would go in the individual feature team's module setup, like StoreModule.swift
-        LegoContentRegistry.shared.register(Carousel.self, forIdentifier: .carousel)
-        LegoContentRegistry.shared.register(CarouselHeader.self, forIdentifier: .carouselHeader)
-        LegoContentRegistry.shared.register(CarouselHeader.self, forIdentifier: .defaultCarouselHeader)
-        LegoContentRegistry.shared.register(CarouselHeader.self, forIdentifier: .menuCarouselHeader)
-        LegoContentRegistry.shared.register(StoreCarousel.self, forIdentifier: .storeCarousel)
-        LegoContentRegistry.shared.register(StoreCarouselRectangularItem.self, forIdentifier: .storeCarouselRectangularItem)
-        LegoContentRegistry.shared.register(StoreCarouselSquareItem.self, forIdentifier: .storeCarouselSquareItem)
-        LegoContentRegistry.shared.register(StoreCarouselSquareItem.self, forIdentifier: .storeMenuCategoryItem)
-        LegoContentRegistry.shared.register(StoreFooter.self, forIdentifier: .storeFooter)
-        LegoContentRegistry.shared.register(StoreMenuCategory.self, forIdentifier: .storeMenuCategory)
-        LegoContentRegistry.shared.register(StoreMenuHeader.self, forIdentifier: .storeMenuHeader)
-        LegoContentRegistry.shared.register(StoreRatingsCarousel.self, forIdentifier: .storeRatingsCarousel)
+        LegoBlockContentRegistry.shared.register(Carousel.self, forIdentifier: .carousel)
+        LegoBlockContentRegistry.shared.register(CarouselHeader.self, forIdentifier: .carouselHeader)
+        LegoBlockContentRegistry.shared.register(CarouselHeader.self, forIdentifier: .defaultCarouselHeader)
+        LegoBlockContentRegistry.shared.register(CarouselHeader.self, forIdentifier: .menuCarouselHeader)
+        LegoBlockContentRegistry.shared.register(StoreCarousel.self, forIdentifier: .storeCarousel)
+        LegoBlockContentRegistry.shared.register(StoreCarouselRectangularItem.self, forIdentifier: .storeCarouselRectangularItem)
+        LegoBlockContentRegistry.shared.register(StoreCarouselSquareItem.self, forIdentifier: .storeCarouselSquareItem)
+        LegoBlockContentRegistry.shared.register(StoreCarouselSquareItem.self, forIdentifier: .storeMenuCategoryItem)
+        LegoBlockContentRegistry.shared.register(StoreFooter.self, forIdentifier: .storeFooter)
+        LegoBlockContentRegistry.shared.register(StoreMenuCategory.self, forIdentifier: .storeMenuCategory)
+        LegoBlockContentRegistry.shared.register(StoreMenuHeader.self, forIdentifier: .storeMenuHeader)
+        LegoBlockContentRegistry.shared.register(StoreRatingsCarousel.self, forIdentifier: .storeRatingsCarousel)
 
         LegoActionRegistry.shared.register(ItemModalAction.self)
     }

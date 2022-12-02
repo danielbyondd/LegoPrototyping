@@ -8,13 +8,13 @@
 import Foundation
 import Lego
 
-public struct StoreFooter: LegoContent {
+public struct StoreFooter: LegoBlockContent {
 
 }
 
-extension LegoIdentifier {
+extension LegoBlockIdentifier {
 
-    public static let storeFooter = LegoIdentifier(name: "cx.ox.store.footer")
+    public static let storeFooter = LegoBlockIdentifier(name: "cx.ox.store.footer")
 
 }
 
@@ -32,7 +32,7 @@ extension StoreFooter {
 
     public init(
         responseContent: ResponseContent,
-        legoFactory: LegoFactory,
+        legoFactory: LegoBlockFactory,
         parentLoggingInfo: LegoLoggingInfo?
     ) throws {
 

@@ -8,16 +8,16 @@
 import Foundation
 import Lego
 
-public struct StoreMenuCategory: LegoContent {
+public struct StoreMenuCategory: LegoBlockContent {
 
-    public let header: Lego
-    public let children: [Lego]
+    public let header: LegoBlock
+    public let children: [LegoBlock]
 
 }
 
-extension LegoIdentifier {
+extension LegoBlockIdentifier {
 
-    public static let storeMenuCategory = LegoIdentifier(name: "cx.ox.store.menu_category")
+    public static let storeMenuCategory = LegoBlockIdentifier(name: "cx.ox.store.menu_category")
 
 }
 
@@ -37,7 +37,7 @@ extension StoreMenuCategory {
 
     public init(
         responseContent: ResponseContent,
-        legoFactory: LegoFactory,
+        legoFactory: LegoBlockFactory,
         parentLoggingInfo: LegoLoggingInfo?
     ) throws {
         header = try legoFactory.makeLego(forID: responseContent.headerID, parentLoggingInfo: parentLoggingInfo)

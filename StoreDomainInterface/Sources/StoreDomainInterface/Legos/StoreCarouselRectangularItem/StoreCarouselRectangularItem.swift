@@ -9,7 +9,7 @@ import Foundation
 import Lego
 import LegoConsumer
 
-public struct StoreCarouselRectangularItem: LegoContent {
+public struct StoreCarouselRectangularItem: LegoBlockContent {
 
     public let id: String
     public let name: String
@@ -102,9 +102,9 @@ public struct StoreCarouselRectangularItem: LegoContent {
 
 }
 
-extension LegoIdentifier {
+extension LegoBlockIdentifier {
 
-    public static let storeCarouselRectangularItem = LegoIdentifier(name: "cx.ox.store.carousel_rectangular_item")
+    public static let storeCarouselRectangularItem = LegoBlockIdentifier(name: "cx.ox.store.carousel_rectangular_item")
 
 }
 
@@ -208,7 +208,7 @@ extension StoreCarouselRectangularItem {
 
     public init(
         responseContent: ResponseContent,
-        legoFactory: LegoFactory,
+        legoFactory: LegoBlockFactory,
         parentLoggingInfo: LegoLoggingInfo?
     ) throws {
         id = responseContent.id

@@ -16,15 +16,15 @@ public struct CarouselHeader {
 
 }
 
-extension LegoIdentifier {
+extension LegoBlockIdentifier {
 
-    public static let carouselHeader = LegoIdentifier(name: "cx.carousel_header")
+    public static let carouselHeader = LegoBlockIdentifier(name: "cx.carousel_header")
 
-    public static let defaultCarouselHeader = LegoIdentifier(name: "cx.carousel_header_default")
+    public static let defaultCarouselHeader = LegoBlockIdentifier(name: "cx.carousel_header_default")
 
 }
 
-extension CarouselHeader: LegoContent {
+extension CarouselHeader: LegoBlockContent {
 
     public struct ResponseContent: LegoResponseContent {
 
@@ -40,7 +40,7 @@ extension CarouselHeader: LegoContent {
 
     public init(
         responseContent: ResponseContent,
-        legoFactory: LegoFactory,
+        legoFactory: LegoBlockFactory,
         parentLoggingInfo: LegoLoggingInfo?
     ) throws {
         self.title = responseContent.title

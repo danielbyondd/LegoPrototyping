@@ -11,7 +11,7 @@ public struct ResponsePage: Decodable {
 
     public struct Lego: Decodable {
         public let groups: [ResponseGroup]
-        public let data: [ResponseLego]
+        public let data: [ResponseLegoBlock]
         public let logging: LegoLoggingInfo
     }
 

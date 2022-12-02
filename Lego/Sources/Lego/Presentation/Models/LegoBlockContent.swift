@@ -1,5 +1,5 @@
 //
-//  LegoContent.swift
+//  LegoBlockContent.swift
 //  
 //
 //  Created by Daniel Byon on 11/18/22.
@@ -7,13 +7,13 @@
 
 import Foundation
 
-public protocol LegoContent<ResponseContent>: AnyEquatable, Hashable {
+public protocol LegoBlockContent<ResponseContent>: AnyEquatable, Hashable {
 
     associatedtype ResponseContent: LegoResponseContent
 
     init(
         responseContent: ResponseContent,
-        legoFactory: LegoFactory,
+        legoFactory: LegoBlockFactory,
         parentLoggingInfo: LegoLoggingInfo?
     ) throws
 

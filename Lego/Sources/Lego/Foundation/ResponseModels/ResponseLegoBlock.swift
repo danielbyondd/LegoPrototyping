@@ -1,5 +1,5 @@
 //
-//  ResponseLego.swift
+//  ResponseLegoBlock.swift
 //  
 //
 //  Created by Daniel Byon on 11/1/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct ResponseLego: Decodable {
+public struct ResponseLegoBlock: Decodable {
 
     public let id: String
     public let type: String
@@ -31,8 +31,8 @@ public struct ResponseLego: Decodable {
         let type = try container.decode(String.self, forKey: .type)
         self.type = type
 
-        let identifier = LegoIdentifier(name: type)
-        let legoType = try LegoContentRegistry.shared.responseContentType(forIdentifier: identifier)
+        let identifier = LegoBlockIdentifier(name: type)
+        let legoType = try LegoBlockContentRegistry.shared.responseContentType(forIdentifier: identifier)
         let lego = try container.decode(legoType, forKey: .content)
         self.content = lego
 

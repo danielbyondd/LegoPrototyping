@@ -11,22 +11,22 @@ public final class LegoViewRegistry {
 
     public static let shared = LegoViewRegistry()
 
-    private var registeredLegos: [LegoIdentifier: (any LegoContent) throws -> any LegoContentView] = [:]
-    private var registeredContentTypes: [LegoIdentifier: any LegoContent.Type] = [:]
-    private var registeredContentViewTypes: [LegoIdentifier: any View.Type] = [:]
+    private var registeredLegos: [LegoBlockIdentifier: (any LegoBlockContent) throws -> any LegoContentView] = [:]
+    private var registeredContentTypes: [LegoBlockIdentifier: any LegoBlockContent.Type] = [:]
+    private var registeredContentViewTypes: [LegoBlockIdentifier: any View.Type] = [:]
 
     public init() { }
 
     public func register<Content, ContentView>(
         _ contentType: Content.Type,
         _ contentViewType: ContentView.Type,
-        forIdentifier identifier: LegoIdentifier
-    ) where Content: LegoContent, ContentView: View {
+        forIdentifier identifier: LegoBlockIdentifier
+    ) where Content: LegoBlockContent, ContentView: View {
         registeredContentTypes[identifier] = contentType
         registeredContentViewTypes[identifier] = contentViewType
     }
 
-    func makeLegoContentView(for lego: Lego) -> any View {
+    func makeLegoContentView(for lego: LegoBlock) -> any View {
         let identifier = lego.typeIdentifier
         guard let factory = registeredLegos[identifier] else {
             assertionFailure("No registered")
@@ -44,5 +44,5 @@ public final class LegoViewRegistry {
 }
 
 public enum LegoViewRegistryError: Error {
-    case unregisteredContentIdentifier(LegoIdentifier)
+    case unregisteredContentIdentifier(LegoBlockIdentifier)
 }

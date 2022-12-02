@@ -8,8 +8,8 @@
 import Foundation
 import Lego
 
-extension LegoIdentifier {
+extension LegoBlockIdentifier {
 
-    public static let menuCarouselHeader = LegoIdentifier(name: "cx.ox.store.menu_category_header")
+    public static let menuCarouselHeader = LegoBlockIdentifier(name: "cx.ox.store.menu_category_header")
 
 }

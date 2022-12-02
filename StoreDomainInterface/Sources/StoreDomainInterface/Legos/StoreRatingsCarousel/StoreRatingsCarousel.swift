@@ -9,7 +9,7 @@ import Foundation
 import Lego
 
 // StoreRatingCTADisplayModule.swift in Cx
-public struct StoreRatingsCarousel: LegoContent {
+public struct StoreRatingsCarousel: LegoBlockContent {
 
     public let maxNumberOfStars: Int
     public let consumerReviewData: ConsumerReviewData
@@ -93,9 +93,9 @@ public struct StoreRatingsCarousel: LegoContent {
 
 }
 
-extension LegoIdentifier {
+extension LegoBlockIdentifier {
 
-    public static let storeRatingsCarousel = LegoIdentifier(name: "cx.ox.store.ratings_carousel")
+    public static let storeRatingsCarousel = LegoBlockIdentifier(name: "cx.ox.store.ratings_carousel")
 
 }
 
@@ -193,7 +193,7 @@ extension StoreRatingsCarousel {
 
     public init(
         responseContent: ResponseContent,
-        legoFactory: LegoFactory,
+        legoFactory: LegoBlockFactory,
         parentLoggingInfo: LegoLoggingInfo?
     ) throws {
         maxNumberOfStars = responseContent.maxNumberOfStars

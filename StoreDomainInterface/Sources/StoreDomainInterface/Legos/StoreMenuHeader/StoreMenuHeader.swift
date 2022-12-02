@@ -8,7 +8,7 @@
 import Foundation
 import Lego
 
-public struct StoreMenuHeader: LegoContent {
+public struct StoreMenuHeader: LegoBlockContent {
 
     public let name: String
     public let menus: [Menu]
@@ -65,9 +65,9 @@ public struct StoreMenuHeader: LegoContent {
 
 }
 
-extension LegoIdentifier {
+extension LegoBlockIdentifier {
 
-    public static let storeMenuHeader = LegoIdentifier(name: "cx.ox.store.menu_header")
+    public static let storeMenuHeader = LegoBlockIdentifier(name: "cx.ox.store.menu_header")
 
 }
 
@@ -137,7 +137,7 @@ extension StoreMenuHeader {
 
     public init(
         responseContent: ResponseContent,
-        legoFactory: LegoFactory,
+        legoFactory: LegoBlockFactory,
         parentLoggingInfo: LegoLoggingInfo?
     ) throws {
         name = responseContent.name
