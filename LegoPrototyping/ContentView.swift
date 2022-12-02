@@ -7,21 +7,40 @@
 
 import SwiftUI
 import Lego
+import LegoConsumer
+import LegoPrism
+import StoreDomainInterface
+import Store
 
 struct ContentView: View {
+
+    @StateObject private var viewModel = ContentViewModel()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack {
+            StorePage(page: viewModel.page)
         }
-        .padding()
+        .navigationTitle("Lego 2.0 Prototype")
     }
+
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
+}
+
+final class ContentViewModel: ObservableObject {
+
+    let page: Page = {
+        let data = try! Fixture.loadJSONData(named: "contract-sample-1")
+        let decoder = JSONDecoder()
+        let responsePage = try! decoder.decode(ResponsePage.self, from: data)
+        let page = try! Page(responsePage: responsePage)
+        return page
+    }()
+
+    init() { }
+
 }

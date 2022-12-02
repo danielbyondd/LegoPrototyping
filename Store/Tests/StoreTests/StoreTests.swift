@@ -3,6 +3,7 @@ import XCTest
 @testable import LegoConsumer
 @testable import LegoPrism
 @testable import Store
+@testable import StoreDomainInterface
 
 final class StoreTests: XCTestCase {
 

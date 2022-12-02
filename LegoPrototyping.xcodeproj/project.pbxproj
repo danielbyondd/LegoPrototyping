@@ -18,6 +18,8 @@
 		47666387292C519600B25CA1 /* LegoConsumer in Frameworks */ = {isa = PBXBuildFile; productRef = 47666386292C519600B25CA1 /* LegoConsumer */; };
 		47666389292C519600B25CA1 /* LegoPrism in Frameworks */ = {isa = PBXBuildFile; productRef = 47666388292C519600B25CA1 /* LegoPrism */; };
 		4766638B292C519600B25CA1 /* Store in Frameworks */ = {isa = PBXBuildFile; productRef = 4766638A292C519600B25CA1 /* Store */; };
+		4766638E29357CBA00B25CA1 /* StoreDomainInterface in Frameworks */ = {isa = PBXBuildFile; productRef = 4766638D29357CBA00B25CA1 /* StoreDomainInterface */; };
+		476663922935842100B25CA1 /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476663912935842100B25CA1 /* Fixture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		476663812911E65500B25CA1 /* Store */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Store; sourceTree = "<group>"; };
 		47666384292C50B900B25CA1 /* LegoConsumer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LegoConsumer; sourceTree = "<group>"; };
 		47666385292C511800B25CA1 /* LegoPrism */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LegoPrism; sourceTree = "<group>"; };
+		4766638C29357C5B00B25CA1 /* StoreDomainInterface */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = StoreDomainInterface; sourceTree = "<group>"; };
+		476663902935840F00B25CA1 /* contract-sample-1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "contract-sample-1.json"; sourceTree = "<group>"; };
+		476663912935842100B25CA1 /* Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +69,7 @@
 				4766637F2911D01A00B25CA1 /* Lego in Frameworks */,
 				4766638B292C519600B25CA1 /* Store in Frameworks */,
 				47666387292C519600B25CA1 /* LegoConsumer in Frameworks */,
+				4766638E29357CBA00B25CA1 /* StoreDomainInterface in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +93,7 @@
 		476663452911CF9400B25CA1 = {
 			isa = PBXGroup;
 			children = (
+				4766638C29357C5B00B25CA1 /* StoreDomainInterface */,
 				476663812911E65500B25CA1 /* Store */,
 				47666384292C50B900B25CA1 /* LegoConsumer */,
 				47666385292C511800B25CA1 /* LegoPrism */,
@@ -112,6 +119,7 @@
 		476663502911CF9400B25CA1 /* LegoPrototyping */ = {
 			isa = PBXGroup;
 			children = (
+				4766638F2935840F00B25CA1 /* Resources */,
 				476663802911E62E00B25CA1 /* Models */,
 				4766637C2911D00E00B25CA1 /* Info.plist */,
 				476663512911CF9400B25CA1 /* LegoPrototypingApp.swift */,
@@ -161,6 +169,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		4766638F2935840F00B25CA1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				476663912935842100B25CA1 /* Fixture.swift */,
+				476663902935840F00B25CA1 /* contract-sample-1.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -182,6 +199,7 @@
 				47666386292C519600B25CA1 /* LegoConsumer */,
 				47666388292C519600B25CA1 /* LegoPrism */,
 				4766638A292C519600B25CA1 /* Store */,
+				4766638D29357CBA00B25CA1 /* StoreDomainInterface */,
 			);
 			productName = LegoPrototyping;
 			productReference = 4766634E2911CF9400B25CA1 /* LegoPrototyping.app */;
@@ -299,6 +317,7 @@
 			files = (
 				476663542911CF9400B25CA1 /* ContentView.swift in Sources */,
 				476663522911CF9400B25CA1 /* LegoPrototypingApp.swift in Sources */,
+				476663922935842100B25CA1 /* Fixture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +661,10 @@
 		4766638A292C519600B25CA1 /* Store */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Store;
+		};
+		4766638D29357CBA00B25CA1 /* StoreDomainInterface */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = StoreDomainInterface;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
