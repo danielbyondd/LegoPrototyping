@@ -33,11 +33,11 @@ struct ContentView_Previews: PreviewProvider {
 
 final class ContentViewModel: ObservableObject {
 
-    let page: Page = {
+    let page: LegoPage = {
         let data = try! Fixture.loadJSONData(named: "contract-sample-1")
         let decoder = JSONDecoder()
         let responsePage = try! decoder.decode(ResponsePage.self, from: data)
-        let page = try! Page(responsePage: responsePage)
+        let page = try! LegoPage(responsePage: responsePage)
         return page
     }()
 

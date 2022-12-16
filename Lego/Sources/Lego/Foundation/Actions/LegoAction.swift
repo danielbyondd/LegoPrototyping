@@ -46,14 +46,14 @@ public func == (lhs: [any LegoAction], rhs: [any LegoAction]) -> Bool {
         return false
     }
     return zip(lhs, rhs)
-        .allSatisfy { l, r in
-            l.isEqual(to: r)
+        .allSatisfy { left, right in
+            left.isEqual(to: right)
         }
 }
 
 extension Array<any LegoAction> {
 
-    public var hashValue: Int {
+    public var hashValue: Int { // swiftlint:disable:this legacy_hashing
         map(\.hashValue).hashValue
     }
 

@@ -11,8 +11,13 @@ public struct ResponsePage: Decodable {
 
     public struct Lego: Decodable {
         public let groups: [ResponseGroup]
+        // TODO: Manually implement decoding, drop unrecognized blocks, for backwards compatibility
         public let data: [ResponseLegoBlock]
         public let logging: LegoLoggingInfo
+    }
+
+    private enum CodingKeys: String, CodingKey {
+        case lego
     }
 
     public let lego: Lego

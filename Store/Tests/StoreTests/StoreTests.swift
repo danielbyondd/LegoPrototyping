@@ -68,7 +68,7 @@ final class StoreTests: XCTestCase {
 
         let responsePage = try decoder.decode(ResponsePage.self, from: data)
 
-        let page = try Page(responsePage: responsePage)
+        let page = try LegoPage(responsePage: responsePage)
         XCTAssertFalse(page.lego.groups.isEmpty)
     }
 

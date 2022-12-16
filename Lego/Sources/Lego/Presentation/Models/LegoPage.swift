@@ -1,5 +1,5 @@
 //
-//  Page.swift
+//  LegoPage.swift
 //  
 //
 //  Created by Daniel Byon on 11/17/22.
@@ -7,10 +7,10 @@
 
 import Foundation
 
-public struct Page: Hashable {
+public struct LegoPage: Hashable {
 
     public struct Lego: Hashable {
-        public let groups: [Group]
+        public let groups: [LegoGroup]
         public let logging: LegoLoggingInfo
 
         init(lego: ResponsePage.Lego) throws {

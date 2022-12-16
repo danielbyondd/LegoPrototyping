@@ -12,7 +12,7 @@ import SwiftUI
 
 public struct StorePage: View {
 
-    private let page: Page
+    private let page: LegoPage
 
     public var body: some View {
         if let group = page.lego.groups.first(where: { $0.name == "group_store_content" }) {
@@ -28,14 +28,14 @@ public struct StorePage: View {
         }
     }
 
-    public init(page: Page) {
+    public init(page: LegoPage) {
         self.page = page
     }
 
 }
 
 struct StorePage_Previews: PreviewProvider {
-    static let page: Page = {
+    static let page: LegoPage = {
         LegoBlockContentRegistry.shared.register(Carousel.self, forIdentifier: .carousel)
         LegoBlockContentRegistry.shared.register(CarouselHeader.self, forIdentifier: .carouselHeader)
         LegoBlockContentRegistry.shared.register(CarouselHeader.self, forIdentifier: .defaultCarouselHeader)
@@ -54,7 +54,7 @@ struct StorePage_Previews: PreviewProvider {
         let data = try! Fixture.loadJSONData(named: "contract-sample-1")
         let decoder = JSONDecoder()
         let responsePage = try! decoder.decode(ResponsePage.self, from: data)
-        let page = try! Page(responsePage: responsePage)
+        let page = try! LegoPage(responsePage: responsePage)
 
         return page
     }()

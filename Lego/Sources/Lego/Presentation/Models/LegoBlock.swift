@@ -11,7 +11,7 @@ public struct LegoBlock: Identifiable {
 
     public let id: String
     public let type: String
-    public let content: any LegoBlockContent
+    public var content: any LegoBlockContent
     public let logging: LegoLoggingInfo?
 
     public var typeIdentifier: LegoBlockIdentifier { .init(name: type) }
